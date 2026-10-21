@@ -21,14 +21,15 @@
 
 ## 🗺️ The Big Picture
 
-![Diagram 1](diagrams/diagram-01.svg)
+<img width="797" height="583" alt="Screenshot 2026-10-21 at 3 21 52 PM" src="https://github.com/user-attachments/assets/b37d1b6d-eeb7-4266-967d-bdca145f07a6" />
 
 
 ## 📱 Real-World Case Study: TaskFlow App
 
 Every section of this guide maps onto one realistic app — an **offline-first task manager** with sync.
 
-![Diagram 2](diagrams/diagram-02.svg)
+<img width="1055" height="408" alt="Screenshot 2026-10-21 at 3 22 08 PM" src="https://github.com/user-attachments/assets/db8b1698-f9c1-4dab-9dc8-dfe209b6c7f9" />
+
 
 
 | Concern | Technology used | Guide section |
@@ -157,7 +158,8 @@ The purpose is to separate responsibilities, reduce coupling, improve testabilit
 
 ### Visual: How the layers talk to each other
 
-![Diagram 3](diagrams/diagram-03.svg)
+<img width="405" height="699" alt="Screenshot 2026-10-21 at 3 22 30 PM" src="https://github.com/user-attachments/assets/aee0f17c-01ad-4725-9e70-6ea3adb715d2" />
+
 
 
 > [!TIP]
@@ -192,7 +194,8 @@ Other important concepts:
 
 A Service is not automatically a background thread. Work executed on a Service's main thread can still block the UI. Use an appropriate execution mechanism for the workload.
 
-![Diagram 4](diagrams/diagram-04.svg)
+<img width="1025" height="270" alt="Screenshot 2026-10-21 at 3 22 42 PM" src="https://github.com/user-attachments/assets/060a1b35-0040-4a33-a298-d4b334ba8db2" />
+
 
 
 > [!TIP]
@@ -284,7 +287,8 @@ Avoid performing blocking network calls, expensive calculations or large file op
 
 Use Coroutines, appropriate executors or an existing RxJava architecture to manage such work.
 
-![Diagram 5](diagrams/diagram-05.svg)
+<img width="738" height="403" alt="Screenshot 2026-10-21 at 3 22 52 PM" src="https://github.com/user-attachments/assets/921e5db7-59a5-4f05-9187-1f96a70cc5b7" />
+
 
 
 > [!TIP]
@@ -462,7 +466,8 @@ viewModelScope.launch {
 
 Cancellation is part of coroutine control flow. Avoid swallowing `CancellationException`.
 
-![Diagram 6](diagrams/diagram-06.svg)
+<img width="1052" height="274" alt="Screenshot 2026-10-21 at 3 23 38 PM" src="https://github.com/user-attachments/assets/f0508479-bffd-4672-a7c4-e98c7d622088" />
+
 
 
 > [!TIP]
@@ -568,7 +573,8 @@ class UserRepository(
 
 This is a simplified example. In production, a one-off API call may be better represented by a suspending function, while a Flow is especially useful for continuously changing data, such as a Room query.
 
-![Diagram 7](diagrams/diagram-07.svg)
+<img width="794" height="97" alt="Screenshot 2026-10-21 at 3 23 47 PM" src="https://github.com/user-attachments/assets/34b5a0fb-0f91-4f5c-b198-c00bb2ba2c5e" />
+
 
 
 > [!TIP]
@@ -705,7 +711,8 @@ This is illustrative; production event handling should account for the lifecycle
 
 Do not treat every event as a SharedFlow event. If a message or status must remain visible until acknowledged, representing it as state can be more reliable.
 
-![Diagram 8](diagrams/diagram-08.svg)
+<img width="1057" height="170" alt="Screenshot 2026-10-21 at 3 23 58 PM" src="https://github.com/user-attachments/assets/e25e1587-a7c0-4801-a94d-7c1201a8cad8" />
+
 
 
 > [!TIP]
@@ -940,7 +947,8 @@ Collection is a suspending terminal operation for a normal Flow. A cold Flow gen
 > ```
 > 
 
-![Diagram 9](diagrams/diagram-09.svg)
+<img width="1060" height="72" alt="Screenshot 2026-10-21 at 3 24 06 PM" src="https://github.com/user-attachments/assets/46322396-7e84-43c1-be47-55ef057386fe" />
+
 
 
 
@@ -1199,8 +1207,7 @@ override fun onCleared() {
 
 This example assumes the class is a ViewModel. `onCleared()` is the relevant ViewModel cleanup callback.
 
-![Diagram 10](diagrams/diagram-10.svg)
-
+<img width="1055" height="79" alt="Screenshot 2026-10-21 at 3 24 14 PM" src="https://github.com/user-attachments/assets/7faabf67-ea99-4286-a47f-ec05f92e1066" />
 
 
 ---
@@ -1230,9 +1237,7 @@ For a Kotlin-first Android application:
 
 Avoid mixing multiple reactive systems without a clear reason.
 
-![Diagram 11](diagrams/diagram-11.svg)
-
-
+<img width="515" height="529" alt="Screenshot 2026-10-21 at 3 24 30 PM" src="https://github.com/user-attachments/assets/8210ed26-8faf-453c-b54f-af3c914a2467" />
 
 ---
 
@@ -1422,7 +1427,8 @@ viewLifecycleOwner.lifecycleScope.launch {
 
 A ViewModel generally survives configuration changes but does not replace persistent storage. Use Room or another appropriate persistence mechanism for durable application data.
 
-![Diagram 12](diagrams/diagram-12.svg)
+<img width="296" height="767" alt="Screenshot 2026-10-21 at 3 24 44 PM" src="https://github.com/user-attachments/assets/68e591cf-4bee-4529-b05c-d1ad774f6837" />
+
 
 
 > [!TIP]
@@ -1490,11 +1496,10 @@ A repository interface can be defined in an inner layer, while the data layer pr
 
 MVVM and Clean Architecture can be combined: MVVM organizes the presentation layer, while Clean Architecture organizes broader responsibilities and dependencies.
 
-![Diagram 13](diagrams/diagram-13.svg)
+<img width="329" height="439" alt="Screenshot 2026-10-21 at 3 24 51 PM" src="https://github.com/user-attachments/assets/fc72377b-f815-488f-92e6-58d543d5448c" />
 
 
-![Diagram 14](diagrams/diagram-14.svg)
-
+<img width="288" height="435" alt="Screenshot 2026-10-21 at 3 25 01 PM" src="https://github.com/user-attachments/assets/0e9e3e94-886a-482e-bdc8-fd1f77af6f69" />
 
 
 ---
@@ -1970,8 +1975,7 @@ Room.databaseBuilder(
 
 Use migrations to preserve existing user data. Destructive migrations can erase data and should only be used when losing the existing database is acceptable.
 
-![Diagram 15](diagrams/diagram-15.svg)
-
+<img width="219" height="708" alt="Screenshot 2026-10-21 at 3 25 11 PM" src="https://github.com/user-attachments/assets/5e1b4cf4-d23b-41a6-b903-872af60a7fb5" />
 
 
 ---
@@ -2067,7 +2071,8 @@ UI renders updated list
 
 The UI does not need to manually query SQLite again after every insert. The observed Room query can emit updated data automatically.
 
-![Diagram 16](diagrams/diagram-16.svg)
+<img width="924" height="451" alt="Screenshot 2026-10-21 at 3 25 20 PM" src="https://github.com/user-attachments/assets/00ffade1-d832-4f6b-be36-1d9b82ed7e32" />
+
 
 
 > [!TIP]
@@ -2142,7 +2147,8 @@ Room, Retrofit, Coroutines and WorkManager have different responsibilities:
 - WorkManager schedules suitable persistent work.
 - Repository logic coordinates data sources and application rules.
 
-![Diagram 17](diagrams/diagram-17.svg)
+<img width="1055" height="248" alt="Screenshot 2026-10-21 at 3 25 33 PM" src="https://github.com/user-attachments/assets/733c4ddd-0d21-4d38-8a9f-551ac330f8ec" />
+
 
 
 > [!TIP]
@@ -2191,7 +2197,8 @@ The repository, DAO and database must be provided through valid constructors or 
 
 Dependency Injection is not the same as Clean Architecture. DI supplies dependencies; architecture determines how responsibilities and dependencies should be organized.
 
-![Diagram 18](diagrams/diagram-18.svg)
+<img width="605" height="368" alt="Screenshot 2026-10-21 at 3 25 43 PM" src="https://github.com/user-attachments/assets/00964f00-f575-4f42-bacf-8dc318f8deb4" />
+
 
 
 > [!TIP]
